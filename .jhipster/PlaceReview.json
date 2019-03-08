@@ -1,0 +1,42 @@
+{
+    "name": "PlaceReview",
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "max",
+                "required"
+            ],
+            "fieldValidateRulesMax": 5
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "place",
+            "otherEntityName": "place",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "reviewer",
+            "otherEntityName": "member",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181002112446",
+    "entityTableName": "placereviews",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

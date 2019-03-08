@@ -1,0 +1,134 @@
+entity Member(members) {
+}
+entity MemberCategory(membercategories) { //LAMBDA, VERIFYED, PREMIUM, VIP, PARTNER
+}
+entity MemberStatus(memberstatus) { //ACTIVE, BLOCKED, SUSPENDED, DELETED
+}
+entity Place(places) {
+	name String required
+    verified Boolean
+    published Boolean
+    phone String
+    email String
+    website String
+    googlePlaceId String
+}
+entity PlaceReview(placereviews) {
+	content String
+	score Integer max(5) required
+}
+entity Spot(spots) {
+	name String required
+    verified Boolean
+}
+entity SocialMedia(socialmedias) {
+	facebookLink String
+    googlePlusLink String
+    twitterLink String
+    instagramLink String
+    pinterestLink String
+}
+entity PlaceCategory(placecategories) {
+}
+entity Activity(activities) {
+    verified Boolean
+}
+entity ActivityFamily(activityfamilies) {
+}
+entity Location(locations) {
+    number String
+	addressOne String
+    addressTwo String
+    regionName String
+	postalCode String
+    city String
+    countryISOCode String
+    lat Float
+    lng Float
+}
+entity Picture(pictures) {
+	name String,
+	name String,
+    file ImageBlob required
+}
+entity Video(videos) {
+	name String
+    url String
+    file AnyBlob
+}
+entity LabelTranslation(labeltranslations) {
+    key String required
+    enValue String
+    frValue String
+    arValue String
+    spValue String
+}
+entity TextTranslation(texttranslations){
+    key String required
+    enValue TextBlob
+    frValue TextBlob
+    arValue TextBlob
+    esValue TextBlob
+}
+entity PlaceManagement(placemanagements) {
+    startDate LocalDate
+    endDate LocalDate
+}
+relationship OneToOne {
+	//--------- Member ---------//
+    Member{user} to User
+    //--------- Place ---------//
+    Place{location} to Location
+    Place{mainPicture} to Picture
+    Place{socialMedias} to SocialMedia
+    //--------- Spot ---------//
+    Spot{location} to Location
+}
+relationship OneToMany {
+	//--------- Place ---------//
+	Place{picture} to Picture
+	Place{video} to Video
+    Place{review} to PlaceReview
+}
+relationship ManyToOne {
+    //--------- Place ---------//
+    Place{description} to TextTranslation
+    Place{shortDescription} to LabelTranslation
+	//--------- Activity ---------//
+    Activity{family} to ActivityFamily{activity}
+    Activity{name} to LabelTranslation
+    Activity{description} to TextTranslation
+    //--------- Member ---------//
+    Member{category} to MemberCategory
+    Member{status} to MemberStatus
+    //--------- MemberCategory ---------//
+    MemberCategory{description} to TextTranslation
+    //--------- MemberStatus ---------//
+    MemberStatus{description} to TextTranslation
+    //--------- PlaceReview ---------//
+    PlaceReview{reviewer} to Member
+    //--------- MemberCategory ---------//
+    MemberCategory{name} to LabelTranslation
+    //--------- MemberStatus ---------//
+    MemberStatus{name} to LabelTranslation
+    //--------- PlaceCategory ---------//
+    PlaceCategory{name} to LabelTranslation
+    PlaceCategory{description} to TextTranslation
+    //--------- ActivityFamily ---------//
+    ActivityFamily{name} to LabelTranslation
+    ActivityFamily{description} to TextTranslation
+    //--------- PlaceManagement ---------//
+    PlaceManagement{manager} to Member
+}
+relationship ManyToMany {
+	//--------- Place ---------//
+	Place{category} to PlaceCategory
+    Place{activity} to Activity
+    Place{management} to PlaceManagement
+}
+
+search * with elasticsearch
+
+paginate all with infinite-scroll
+
+service all with serviceImpl

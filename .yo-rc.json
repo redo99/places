@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "fr.celexio.peaks",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.3.1",
+    "applicationType": "monolith",
+    "baseName": "peaks",
+    "packageName": "fr.celexio.peaks",
+    "packageFolder": "fr/celexio/peaks",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YTE2YTE1MDIxMWQzMDg3MGQwNzlkMTI2YmE5YzhiYjM0ZTg4ZWEwZjdlNjg4MGM1YmIyYzYyNDkyNzUyZTE4ZTg4Y2I5YTY3NTQyYjE3YTNhZWNkNWIyYTM2MmVlNTZlYjI3ZGUyZTlhNWExNzRhOWM4ODhhYjMzY2MzYTlkMGM=",
+    "enableTranslation": true,
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "jhiPrefix": "peaks",
+    "clientPackageManager": "npm",
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "ar-ly",
+      "fr",
+      "es"
+    ],
+    "skipClient": true
+  }
+}

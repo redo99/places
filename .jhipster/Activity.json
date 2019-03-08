@@ -1,0 +1,39 @@
+{
+    "name": "Activity",
+    "fields": [
+        {
+            "fieldName": "verified",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "family",
+            "otherEntityName": "activityFamily",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "name",
+            "otherEntityName": "labelTranslation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "description",
+            "otherEntityName": "textTranslation",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181002112450",
+    "entityTableName": "activities",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

@@ -1,0 +1,39 @@
+{
+    "name": "LabelTranslation",
+    "fields": [
+        {
+            "fieldName": "key",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "enValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "frValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "arValue",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "spValue",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181002112455",
+    "entityTableName": "labeltranslations",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

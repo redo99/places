@@ -1,0 +1,36 @@
+{
+    "name": "SocialMedia",
+    "fields": [
+        {
+            "fieldName": "facebookLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "googlePlusLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "twitterLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "instagramLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pinterestLink",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181002112448",
+    "entityTableName": "socialmedias",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

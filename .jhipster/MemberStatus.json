@@ -1,0 +1,28 @@
+{
+    "name": "MemberStatus",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "description",
+            "otherEntityName": "textTranslation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "name",
+            "otherEntityName": "labelTranslation",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181002112444",
+    "entityTableName": "memberstatus",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}

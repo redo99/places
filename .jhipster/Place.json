@@ -1,0 +1,126 @@
+{
+    "name": "Place",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "verified",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "published",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "googlePlaceId",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "location",
+            "otherEntityName": "location",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "mainPicture",
+            "otherEntityName": "picture",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "socialMedias",
+            "otherEntityName": "socialMedia",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "picture",
+            "otherEntityName": "picture",
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "video",
+            "otherEntityName": "video",
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "review",
+            "otherEntityName": "placeReview",
+            "otherEntityRelationshipName": "place"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "description",
+            "otherEntityName": "textTranslation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "shortDescription",
+            "otherEntityName": "labelTranslation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "category",
+            "otherEntityName": "placeCategory",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "activity",
+            "otherEntityName": "activity",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "",
+            "relationshipName": "management",
+            "otherEntityName": "placeManagement",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20181002112445",
+    "entityTableName": "places",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": "elasticsearch"
+}
