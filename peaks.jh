@@ -5,7 +5,7 @@ entity MemberCategory(membercategories) { //LAMBDA, VERIFYED, PREMIUM, VIP, PART
 entity MemberStatus(memberstatus) { //ACTIVE, BLOCKED, SUSPENDED, DELETED
 }
 entity Place(places) {
-	name String required
+    name String required
     verified Boolean
     published Boolean
     phone String
@@ -13,15 +13,15 @@ entity Place(places) {
     website String
 }
 entity PlaceReview(placereviews) {
-	content String
-	score Integer max(5) required
+    content String
+    score Integer max(5) required
 }
 entity Spot(spots) {
-	name String required
+    name String required
     verified Boolean
 }
 entity SocialMedia(socialmedias) {
-	facebookLink String
+    facebookLink String
     googlePlusLink String
     twitterLink String
     instagramLink String
