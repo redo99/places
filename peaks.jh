@@ -5,7 +5,7 @@ entity MemberCategory(membercategories) { //LAMBDA, VERIFYED, PREMIUM, VIP, PART
 entity MemberStatus(memberstatus) { //ACTIVE, BLOCKED, SUSPENDED, DELETED
 }
 entity Place(places) {
-	name String required
+    name String required
     verified Boolean
     published Boolean
     phone String
@@ -14,21 +14,17 @@ entity Place(places) {
     googlePlaceId String
 }
 entity PlaceReview(placereviews) {
-	content String
-	score Integer max(5) required
-}
-entity Spot(spots) {
-	name String required
-    verified Boolean
+    content String
+    score Integer max(5) required
 }
 entity SocialMedia(socialmedias) {
-	facebookLink String
+    facebookLink String
     googlePlusLink String
     twitterLink String
     instagramLink String
     pinterestLink String
 }
-entity PlaceCategory(placecategories) {
+entity PlaceCategory(placecategories) { // School, Club, Shop, Spot ...
 }
 entity Activity(activities) {
     verified Boolean
@@ -37,22 +33,22 @@ entity ActivityFamily(activityfamilies) {
 }
 entity Location(locations) {
     number String
-	addressOne String
+    addressOne String
     addressTwo String
     regionName String
-	postalCode String
+    postalCode String
     city String
     countryISOCode String
     lat Float
     lng Float
 }
 entity Picture(pictures) {
-	name String,
-	name String,
+    name String,
+    url String,
     file ImageBlob required
 }
 entity Video(videos) {
-	name String
+    name String
     url String
     file AnyBlob
 }
@@ -75,7 +71,7 @@ entity PlaceManagement(placemanagements) {
     endDate LocalDate
 }
 relationship OneToOne {
-	//--------- Member ---------//
+    //--------- Member ---------//
     Member{user} to User
     //--------- Place ---------//
     Place{location} to Location
@@ -85,16 +81,16 @@ relationship OneToOne {
     Spot{location} to Location
 }
 relationship OneToMany {
-	//--------- Place ---------//
-	Place{picture} to Picture
-	Place{video} to Video
+    //--------- Place ---------//
+    Place{picture} to Picture
+    Place{video} to Video
     Place{review} to PlaceReview
 }
 relationship ManyToOne {
     //--------- Place ---------//
     Place{description} to TextTranslation
     Place{shortDescription} to LabelTranslation
-	//--------- Activity ---------//
+    //--------- Activity ---------//
     Activity{family} to ActivityFamily{activity}
     Activity{name} to LabelTranslation
     Activity{description} to TextTranslation
@@ -121,8 +117,8 @@ relationship ManyToOne {
     PlaceManagement{manager} to Member
 }
 relationship ManyToMany {
-	//--------- Place ---------//
-	Place{category} to PlaceCategory
+    //--------- Place ---------//
+    Place{category} to PlaceCategory
     Place{activity} to Activity
     Place{management} to PlaceManagement
 }
